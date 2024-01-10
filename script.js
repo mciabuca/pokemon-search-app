@@ -1,12 +1,12 @@
-document.getElementById('search-button').addEventListener('click', function() {
+document.getElementById('search-button').addEventListener('click', function(event) {
+    event.preventDefault();
+
     let searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
 
     searchTerm = searchTerm.replace('♀', '-f').replace('♂', '-m').replace(/\s+/g, '-').replace(/\./g, '');
 
     if (searchTerm === '') {
         alert('Please enter a Pokémon name or ID');
-    } else if (searchTerm === 'red') {
-        alert('Pokémon not found');
     } else {
         fetch(`https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchTerm}`)
             .then(response => {
