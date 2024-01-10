@@ -1,0 +1,9 @@
+{
+  "homepage": "http://mciabuca.github.io/pokemon-search-app",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  }
+}
